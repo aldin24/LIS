@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link href="<?php echo asset_url('css/custom.css'); ?>" rel="stylesheet" type="text/css">
 
 
 
@@ -28,10 +28,10 @@
   </button>
         <div class="collapse navbar-collapse text-center" id="navbarNav">
             <ul class="navbar-nav text-center navg">
-                <li><a href="<?php echo site_url(); ?>">Home</a></li>
-                <li><a href="<?php echo base_url(); ?>about">About</a></li>
-                <li><a href="<?php echo base_url(); ?>about">View Books</a></li>
-                <li><a href="<?php echo base_url(); ?>Login">Login</a></li>
+                <li style="  display: block; margin-left: 20px;"><a href="<?php echo site_url(); ?>">Home</a></li>
+                <li style="  display: block; margin-left: 20px;"><a href="<?php echo base_url(); ?>about">About</a></li>
+                <li style="  display: block; margin-left: 20px;"><a href="<?php echo base_url(); ?>about">View Books</a></li>
+                <li style="  display: block; margin-left: 20px;"><a href="<?php echo base_url(); ?>Login">Login</a></li>
 
 
 
@@ -39,5 +39,3 @@
 
         </div>
     </nav>
-
-
