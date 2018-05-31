@@ -8,7 +8,7 @@
         <div class="row justify-content-md-center">
 
             <div class="col-md-6">
-<br><br><br>
+                <br><br><br>
                 <?= form_open('login/verifylogin') ?>
                     <form>
                         <div class="form-group">
@@ -33,10 +33,10 @@
             <div class="col-md-6">
                 <div class="jumbotron">
                     <h1 class="display-4">Welcome back!</h1>
-                    <p class="lead">If you don't have an account you can register by click the register button bellow.</p>
+                    <p class="lead">Login back to your account to find new books to read</p>
                     <hr class="my-4">
 
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Register</a>
+
                 </div>
             </div>
         </div>

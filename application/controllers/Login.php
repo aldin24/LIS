@@ -9,15 +9,22 @@ class Login extends CI_Controller {
 	}
 
 	function index( ) {
-
+		if( $this->session->userdata('logged_in') && $this->session->userdata('logged_in')['type'] == '10001' ) {
+			redirect( '/librarian', 'refresh' );
+		} else if( $this->session->userdata('logged_in') ) {
+			redirect( '/user', 'refresh' );
+		} else {
 			$data['title'] = "Login";
-
+			$active = array('home'=>'', 'login'=>'active', 'view'=>'', 'suggestion'=>'');
+			$data['active'] = $active;
+			$data['head'] = '<div class="form-group has-error resize">';
+			$data['tail'] = '</div>';
 
 			$this->load->helper( array('form') );
 			$this->load->view('templates/header', $data);
 			$this->load->view("pages/login", $data);
 			$this->load->view('templates/footer', $data);
-
+		}
 	}
 
 	function view( ) {

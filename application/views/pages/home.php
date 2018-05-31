@@ -15,8 +15,8 @@
                     <div class="row">
                         <div class="col">
                             <p class="lead">
-                                <a href="#" class="btn btn-lg btn-primary">Register</a>
-                                <a href="#" class="btn btn-lg btn-primary">Login</a>
+
+                                <a href="<?php echo base_url(); ?>Login" class="btn btn-lg btn-success">Login</a>
                             </p>
                         </div>
                     </div>
