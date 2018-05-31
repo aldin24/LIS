@@ -1,4 +1,4 @@
-<br>
+
 <br><br><br><br><br>
 
 
@@ -8,7 +8,7 @@
         <div class="row justify-content-md-center">
 
             <div class="col-md-6">
-                <br><br><br>
+                <br><br>
                 <?= form_open('login/verifylogin') ?>
                     <form>
                         <div class="form-group">
