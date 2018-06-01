@@ -84,7 +84,7 @@ $this->session->unset_userdata('message');
 							<li><a href="/index.php/user/view/viewissues/pending">View Pending Issues</a></li>
 						</ul>
 					</li>
-
+					
 				</ul>
 				<span class="navbar-right">
 					<ul class="nav navbar-nav">
@@ -105,7 +105,7 @@ $this->session->unset_userdata('message');
 							</ul>
 						</li>
 					</ul>
-
+					
 				</span>
 			</div>
 		</div>
