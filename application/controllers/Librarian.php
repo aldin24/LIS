@@ -143,9 +143,9 @@ class Librarian extends CI_Controller {
 					$this->index();
 			}
 
-			$this->load->view('templates/header', $data);
+			$this->load->view('templates/lheader', $data);
 			$this->load->view("librarian/$page", $data);
-			$this->load->view('templates/footer', $data);
+			$this->load->view('templates/lfooter', $data);
 		}  else if( $this->session->userdata('logged_in') ) {
 			redirect( '/user', 'refresh' );
 		} else {

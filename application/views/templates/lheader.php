@@ -1,26 +1,25 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-       <!--     Fonts and icons     -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
-    <link href="<?php echo asset_url('css/custom.css'); ?>" rel="stylesheet" type="text/css">
-
-
-
-
-    <title>
-        <?= $title ?>
-    </title>
-</head>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title><?= $title ?></title>
+		<link rel="stylesheet" type="text/css" href="<?= base_url()."css/w3.css" ?>" />
+		<title><?php echo $title; ?></title>
+		<link rel="stylesheet" type="text/css" href="<?= base_url()."css/readable.css" ?>" />
+		<link rel="stylesheet" type="text/css" href="<?= base_url()."css/datatables.bootstrap.css" ?>" />
+		<link rel="stylesheet" type="text/css" href="<?= base_url()."css/jasny.css" ?>" />
+		<link rel="stylesheet" type="text/css" href="<?= base_url()."css/custom.css" ?>" />
+		<script src="<?= base_url()."js/jquery.js" ?>"></script>
+		<script src="<?= base_url()."js/bootstrap.js" ?>"></script>
+		<script src="<?= base_url()."js/datatables.js" ?>"></script>
+		<script src="<?= base_url()."js/datatables.bootstrap.js" ?>"></script>
+		<script src="<?= base_url()."js/jasny.js" ?>"></script>
+		<style>
+			body {
+				padding-top:70px;
+				padding-bottom:30px;
+			}
+		</style>
 		<?php
 			if( $this->session->userdata('message') ) {
 				echo "
@@ -32,9 +31,8 @@
 				";
 			}
 		?>
-
+	</head>
 	<body>
-	<div class="container">
 <?php
 if( $this->session->userdata('message') ) {
 ?>
@@ -150,4 +148,4 @@ $this->session->unset_userdata('message');
 			</div>
 		</div>
 	</div>
-	</div>
+	<div class="container">

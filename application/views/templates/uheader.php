@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <title>
-        <?= $title ?>
-    </title>
-
-    <title>
-        <?php echo $title; ?>
-    </title>
-    <link href="<?php echo asset_url('css/w3.css'); ?>" rel="stylesheet" type="text/css">
-    <link href="<?php echo asset_url('css/readable.css'); ?>" rel="stylesheet" type="text/css">
-    <link href="<?php echo asset_url('css/datatables.bootstrap.css'); ?>" rel="stylesheet" type="text/css">
-    <link href="<?php echo asset_url('css/jasny.css'); ?>" rel="stylesheet" type="text/css">
-    <link href="<?php echo asset_url('css/custom.css'); ?>" rel="stylesheet" type="text/css">
-
-
-
-
-    <?php
+	<head>
+		<meta charset="utf-8">
+		<title><?= $title ?></title>
+		<link rel="stylesheet" type="text/css" href="<?= base_url()."css/w3.css" ?>" />
+		<title><?php echo $title; ?></title>
+		<link rel="stylesheet" type="text/css" href="<?= base_url()."css/readable.css" ?>" />
+		<link rel="stylesheet" type="text/css" href="<?= base_url()."css/datatables.bootstrap.css" ?>" />
+		<link rel="stylesheet" type="text/css" href="<?= base_url()."css/jasny.css" ?>" />
+		<link rel="stylesheet" type="text/css" href="<?= base_url()."css/custom.css" ?>" />
+		<script src="<?= base_url()."js/jquery.js" ?>"></script>
+		<script src="<?= base_url()."js/bootstrap.js" ?>"></script>
+		<script src="<?= base_url()."js/datatables.js" ?>"></script>
+		<script src="<?= base_url()."js/datatables.bootstrap.js" ?>"></script>
+		<script src="<?= base_url()."js/jasny.js" ?>"></script>
+		<style>
+			body {
+				padding-top:70px;
+				padding-bottom:30px;
+			}
+		</style>
+		<?php
 			if( $this->session->userdata('message') ) {
 				echo "
 					<script>
@@ -30,64 +31,83 @@
 				";
 			}
 		?>
-</head>
-
-<body>
-
-
-
-
-    <?php
+	</head>
+	<body>
+<?php
 if( $this->session->userdata('message') ) {
 ?>
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 			</button>
-                        <h4 class="modal-title" id="myModalLabel">Success</h4>
-                    </div>
-                    <div class="modal-body" style="word-wrap:break-word">
-                        <?= $this->session->userdata('message') ?>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <?php
+			<h4 class="modal-title" id="myModalLabel">Success</h4>
+		</div>
+		<div class="modal-body" style="word-wrap:break-word">
+			<?= $this->session->userdata('message') ?>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+		</div>
+		</div>
+	</div>
+</div>
+<?php
 }
 $this->session->unset_userdata('message');
 ?>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="<?php echo site_url(); ?>">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="/index.php/user">
+							<span class="glyphicon glyphicon-home"></span>
+							Home
+						</a>
+					</li>
+					<li class="active">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-book"></span>
+							View
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/index.php/user/view/viewpublishers">View Publishers</a></li>
+							<li><a href="/index.php/user/view/viewauthors">View Authors</a></li>
+							<li><a href="/index.php/user/view/viewbooks/all">View All Books</a></li>
+							<li><a href="/index.php/user/view/viewbooks/available">View Available Books</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="/index.php/user/view/viewissues/all">View Issue History</a></li>
+							<li><a href="/index.php/user/view/viewissues/pending">View Pending Issues</a></li>
+						</ul>
+					</li>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+				</ul>
+				<span class="navbar-right">
+					<ul class="nav navbar-nav">
+						<li class="dropdown navbar-right active">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="glyphicon glyphicon-cog"></span>
+								<span style="font-weight:bold;"><?= $realname ?></span>
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li class="dropdown-header">Profile Actions</li>
+								<li><a href="/index.php/user/view/viewprofile">View Profile</a></li>
+								<li><a href="/index.php/user/view/editprofile">Edit Profile</a></li>
+								<li><a href="/index.php/user/view/changepassword">Change Password</a></li>
+								<li role="separator" class="divider"></li>
+								<li class="dropdown-header">User Actions</li>
+								<li><a href="/index.php/login/logout">Logout</a></li>
+							</ul>
+						</li>
+					</ul>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          View
-        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?php echo base_url(); ?>viewpublishers">View Publishers</a>
-                            <a class="dropdown-item" href="<?php echo base_url(); ?>viewpauthors">View Authors</a>
-                            <a class="dropdown-item" href="<?php echo base_url(); ?>viewbooks">View All Books</a>
-                            <a class="dropdown-item" href="<?php echo base_url(); ?>viewissues">View Available Books</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="<?php echo base_url(); ?>viewpublishers">View Pending Issues</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
-
-            </div>
-        </nav>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="container">
