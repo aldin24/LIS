@@ -93,9 +93,9 @@ class User extends CI_Controller {
 					break;
 			}
 
-			$this->load->view('templates/uheader', $data);
+			$this->load->view('templates/sheader', $data);
 			$this->load->view("user/$page", $data);
-			$this->load->view('templates/ufooter', $data);
+			$this->load->view('templates/footer', $data);
 		} else if( $this->session->userdata('logged_in') ) {
 			redirect( '/librarian', 'refresh' );
 		} else {

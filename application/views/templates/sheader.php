@@ -32,7 +32,7 @@
         <div class="collapse navbar-collapse text-center" id="navbarNav">
             <ul class="navbar-nav text-center navg">
                 <li style="  display: block; margin-left: 20px;"><a href="<?php echo site_url(); ?>">Home</a></li>
-                <li style="  display: block; margin-left: 20px;"><a href="<?php echo base_url(); ?>about">About</a></li>
+                <li style="  display: block; margin-left: 20px;"><a href="<?php echo base_url(); ?>viewpublishers">viewpublishers</a></li>
                 <li style="  display: block; margin-left: 20px;"><a href="<?php echo base_url(); ?>about">View Books</a></li>
                 <li style="  display: block; margin-left: 20px;"><a href="<?php echo base_url(); ?>Login">Login</a></li>
 
